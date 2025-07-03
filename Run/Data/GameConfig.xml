@@ -1,0 +1,12 @@
+<GameConfig
+	screenSizeX="1600"
+	screenSizeY="800"
+	gameSize="8"
+	perfectThresholdSeconds="0.0333"
+	nearPerfectThresholdSeconds="0.0833"
+	acceptedThresholdSeconds="0.12"
+	overloadThreshold="3"
+/>
+
+
+

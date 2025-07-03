@@ -1,0 +1,11 @@
+Event	ID	Name			Wwise Object Path	Notes
+	83581882	Play_TestClick			\Default Work Unit\Play_TestClick	
+	2121299920	Play_DemoMusic			\Default Work Unit\Play_DemoMusic	
+	3649465061	Play_Rizu_Stage			\Default Work Unit\Play_Rizu_Stage	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	162188889	TutorialMaybe	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\D9\{D906810A-D8AE-09F9-4D63-A56372354D53}.wem		\Interactive Music Hierarchy\Default Work Unit\Demo Music\DemoMusic\TutorialMaybe		17146144
+	396408356	TestClick	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\67\{671539EE-E6E1-95C3-3DC1-27B78A30D091}.wem		\Actor-Mixer Hierarchy\Default Work Unit\TestClick		40268
+	529303890	Test	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\D5\{D587EFBE-135F-5325-813B-99EAA66C922A}.wem		\Interactive Music Hierarchy\Default Work Unit\Rizu Stage\RizuStageStartLoop\Test		37908
+	852330174	Music_Beta_Start_164	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\67\{674AC229-0C45-35C1-8817-EB15A4978F11}.wem		\Interactive Music Hierarchy\Default Work Unit\Rizu Stage\RizuStageStartLoop\Music_Beta_Start_164		9293368
+

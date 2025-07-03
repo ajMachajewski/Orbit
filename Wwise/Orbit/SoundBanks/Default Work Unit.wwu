@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{893F55C5-902A-413E-A088-7C9CB41CEEB4}" SchemaVersion="123">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{893F55C5-902A-413E-A088-7C9CB41CEEB4}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{4A912F3A-CED6-4D07-92CF-604DBF18C8B1}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_DemoMusic" ID="{A45F094D-34D6-469F-A73A-3C009B30B93F}" WorkUnitID="{72F9AA7A-8D16-4D35-A78F-E12AE5A4E170}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Rizu_Stage" ID="{46984F70-485A-490E-B6B9-2993278A07F0}" WorkUnitID="{72F9AA7A-8D16-4D35-A78F-E12AE5A4E170}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_TestClick" ID="{5646E686-E2E6-4A54-96CC-9C7862E5195B}" WorkUnitID="{72F9AA7A-8D16-4D35-A78F-E12AE5A4E170}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

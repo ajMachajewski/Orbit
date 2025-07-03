@@ -1,0 +1,102 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{4A912F3A-CED6-4D07-92CF-604DBF18C8B1}",
+    "Language": "SFX",
+    "Hash": "{7B55A95E-3DC6-203D-5613-C44666DCD411}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "162188889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "TutorialMaybe.wav",
+      "CachePath": "D9/{D906810A-D8AE-09F9-4D63-A56372354D53}.wem"
+     },
+     {
+      "Id": "396408356",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "TestClick.wav",
+      "CachePath": "67/{671539EE-E6E1-95C3-3DC1-27B78A30D091}.wem"
+     },
+     {
+      "Id": "529303890",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "SFX_Dash_Placeholder.wav",
+      "CachePath": "D5/{D587EFBE-135F-5325-813B-99EAA66C922A}.wem"
+     },
+     {
+      "Id": "852330174",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Music_Beta_Start_164.wav",
+      "CachePath": "67/{674AC229-0C45-35C1-8817-EB15A4978F11}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "2121299920",
+      "Name": "Play_DemoMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_DemoMusic",
+      "GUID": "{A45F094D-34D6-469F-A73A-3C009B30B93F}",
+      "DurationType": "OneShot",
+      "DurationMin": "92.09303",
+      "DurationMax": "92.09303",
+      "MediaRefs": [
+       {
+        "Id": "162188889"
+       }
+      ]
+     },
+     {
+      "Id": "3649465061",
+      "Name": "Play_Rizu_Stage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Rizu_Stage",
+      "GUID": "{46984F70-485A-490E-B6B9-2993278A07F0}",
+      "DurationType": "OneShot",
+      "DurationMin": "54.146362",
+      "DurationMax": "54.146362",
+      "MediaRefs": [
+       {
+        "Id": "529303890"
+       },
+       {
+        "Id": "852330174"
+       }
+      ]
+     },
+     {
+      "Id": "83581882",
+      "Name": "Play_TestClick",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_TestClick",
+      "GUID": "{5646E686-E2E6-4A54-96CC-9C7862E5195B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.22773242",
+      "DurationMax": "0.22773242",
+      "MediaRefs": [
+       {
+        "Id": "396408356"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0E566959-ED29-5ED1-F3D4-4F0B3A8D8616}"
+ }
+}

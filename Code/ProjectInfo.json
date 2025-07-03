@@ -1,0 +1,29 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "Orbit",
+   "GUID": "{B7D86832-9190-4978-A1B6-BD81238D7929}",
+   "Generator": "2024.1.5.8803"
+  },
+  "CacheRoot": "../Wwise/Orbit/.cache",
+  "Platforms": [
+   {
+    "Name": "Windows",
+    "GUID": "{F309D345-1532-42B0-B73E-124CED4C5D02}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "../Run/Data/Audio/GeneratedSoundBanks"
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{CA380ED3-7E4C-4FC7-A122-B97FEE95DEC3}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{504ECA48-EC66-9660-4B53-E851FF5037B0}"
+ }
+}

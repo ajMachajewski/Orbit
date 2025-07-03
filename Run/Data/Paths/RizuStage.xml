@@ -1,0 +1,151 @@
+<Path name="RizuStage" scale="1" width=".5">
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="2" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="2" />
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat=".5" speed="2" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1"  speed="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="2" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="2" />
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1.5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" spin="true" />
+	<Node beat=".5" spin="true" />
+	<Node beat="1" />
+</Path>
