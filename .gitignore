@@ -6,6 +6,7 @@
 # Ignore Specific Folders
 Wwise/
 Temporary/
+*.sln
 
 # User-specific files
 *.rsuser
