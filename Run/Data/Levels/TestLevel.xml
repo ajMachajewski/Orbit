@@ -1,0 +1,15 @@
+<Level 
+	name="Test Level"
+	source="Rizu: Stage!"
+	path="Data/Paths/TestPath1.xml"
+	musicPlayEvent="Play_DemoMusic"
+	musicStopEvent="Stop_DemoMusic"
+	bpm="86"
+	countdownLength="4"
+	difficulty="2"
+>
+	<Background
+		background="Data/Images/SpaceRed.png"
+		backgroundScale="1"
+	/>
+</Level>

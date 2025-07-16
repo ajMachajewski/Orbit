@@ -1,0 +1,15 @@
+<Level 
+	name="Android Arena"
+	source="HardDriverz"
+	path="Data/Paths/HardDriverzDune.xml"
+	musicPlayEvent="Play_Dune"
+	musicStopEvent="Stop_Dune"
+	bpm="70"
+	countdownLength="4"
+	difficulty="5"
+>
+	<Background
+		background="Data/Images/SpaceBlue.png"
+		backgroundScale="1"
+	/>
+</Level>

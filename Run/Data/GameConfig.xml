@@ -2,10 +2,21 @@
 	screenSizeX="1600"
 	screenSizeY="800"
 	gameSize="8"
-	perfectThresholdSeconds="0.0333"
-	nearPerfectThresholdSeconds="0.0833"
-	acceptedThresholdSeconds="0.12"
+	perfectThresholdSeconds="0.04"
+	nearPerfectThresholdSeconds="0.075"
+	acceptedThresholdSeconds="0.13"
+	deathThresholdSeconds="0.25"
 	overloadThreshold="3"
+	inputLockTime=".667"
+	
+	perfectMultiplier="1.0"
+	nearPerfectMultiplier=".9"
+	nonPerfectMultiplier=".5"
+	checkpointScorePenalty=".95"
+	
+	attractBackground="Data/Images/SpaceBlue.png"
+	levelSelectBackground="Data/Images/SpaceRed.png"
+	inputDelaySeconds="0.22"
 />
 
 

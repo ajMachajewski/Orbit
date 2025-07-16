@@ -1,0 +1,352 @@
+<Path name="TestPath1" scale="1" width=".6">
+	<Node beat="1" />
+	<!-- Intro -->
+	<Node beat="1" speed=".25" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1.75" speed=".5" />
+	<Node beat=".25" />
+	<!-- Verse 1; Phrase 1 (A) -->
+	<Node beat="1" speed="2" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".75" />
+	<Node beat=".25" />
+	<Node beat=".5" />
+	<Node beat="1.5" spin="true" />
+	<Node beat="1" />
+	<!-- Phrase 2 (B) -->
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<!-- Phrase 3 (A) -->
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".75" />
+	<Node beat=".25" />
+	<Node beat=".5" />
+	<Node beat="1.5" spin="true" />
+	<Node beat="1" />
+	<!-- Phrase 4 (C) -->
+	<Node beat="1.5" spin="true" />
+	<Node beat="1.5" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<!-- Verse 1 Repeat (A) -->
+	<Node beat="1" speed="2" checkpoint="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".75" />
+	<Node beat=".25" />
+	<Node beat=".5" />
+	<Node beat="1.5" spin="true" />
+	<Node beat="1" />
+	<!-- Phrase 2 (B) -->
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<!-- A -->
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".75" />
+	<Node beat=".25" />
+	<Node beat=".5" />
+	<Node beat="1.5" spin="true" />
+	<Node beat="1" />
+	<!-- C -->
+	<Node beat=".66666667" speed="4" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat="1" speed="2" />
+	<Node beat="1" />
+	<Node beat=".5" speed="4" />
+	<Node beat=".5" spin="true"/>
+	<Node beat=".5" />
+	<Node beat=".5" spin="true"/>
+	<Node beat=".5" />
+	<Node beat=".5" spin="true"/>
+	<Node beat=".5" />
+	<Node beat=".5" spin="true"/>
+	<!-- Chorus -->
+	<Node beat="1" speed="2" checkpoint="true" />
+	<Node beat="1" spin="true"/>
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" checkpoint="true" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Post Chorus -->
+	<Node beat="1" spin="true" speed=".0625" checkpoint="true" />
+	<!-- Bridge -->>
+	<Node beat="1" speed="2" checkpoint="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<!-- Bridge Repeat -->
+	<Node beat="1" spin="true" checkpoint="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<Node beat="1" spin="true" />
+	<Node beat="1" />
+	<Node beat="1" />
+	<Node beat=".5" />
+	<Node beat=".5" />
+	<!-- Transition to Chorus (C) -->
+	<Node beat=".66666667" spin="true" speed="4" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat="1.3333333" />
+	<Node beat="1" speed="2" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" speed="4" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Chorus -->
+	<Node beat="1" speed="2" checkpoint="true" />
+	<Node beat="1" spin="true"/>
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" checkpoint="true" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<!-- Repeat -->
+	<Node beat="1" />
+	<Node beat="1" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+	<Node beat="1.3333333" />
+	<Node beat="1" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" spin="true" />
+	<Node beat=".66666667" />
+	<Node beat=".66666667" />
+	<Node beat="1" />
+</Path>

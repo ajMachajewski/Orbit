@@ -1,4 +1,4 @@
-<Path name="RizuStage" scale="1" width=".5">
+<Path name="RizuStage" scale="1" width=".6">
 	<Node beat="1" />
 	<Node beat="1" />
 	<Node beat="1" />
@@ -8,7 +8,7 @@
 	<Node beat="1" />
 	<Node beat="1" />
 	<Node beat="1" />
-	<Node beat="1" />
+	<Node beat="1" checkpoint="true" />
 	<Node beat=".5" />
 	<Node beat="1" />
 	<Node beat="1" />
@@ -61,7 +61,7 @@
 	<Node beat="1" />
 	<Node beat="1" />
 	<Node beat="1" />
-	<Node beat="1" />
+	<Node beat="1" checkpoint="true" />
 	<Node beat="1" />
 	<Node beat=".5" />
 	<Node beat="1" />
@@ -128,7 +128,7 @@
 	<Node beat="1" />
 	<Node beat="1" />
 	<Node beat="1" />
-	<Node beat="1" />
+	<Node beat="1" checkpoint="true" />
 	<Node beat="1" />
 	<Node beat="1" />
 	<Node beat="1" />

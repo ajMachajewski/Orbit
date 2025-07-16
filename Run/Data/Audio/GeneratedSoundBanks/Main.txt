@@ -1,11 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
 	83581882	Play_TestClick			\Default Work Unit\Play_TestClick	
+	98427794	Stop_RizuStage			\Default Work Unit\Stop_RizuStage	
+	394383334	Stop_DemoMusic			\Default Work Unit\Stop_DemoMusic	
+	862296290	Slow_Music			\Default Work Unit\Slow_Music	
+	910581297	Play_PlayerDeath			\Default Work Unit\Play_PlayerDeath	
 	2121299920	Play_DemoMusic			\Default Work Unit\Play_DemoMusic	
-	3649465061	Play_Rizu_Stage			\Default Work Unit\Play_Rizu_Stage	
+	2560865840	Play_Dune			\Default Work Unit\Play_Dune	
+	2845582322	Stop_Dune			\Default Work Unit\Stop_Dune	
+	3429943800	Play_RizuStage			\Default Work Unit\Play_RizuStage	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	628919086	Slowing			\Default Work Unit\Slowing	
+	782826392	Default			\Default Work Unit\Default	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Slowing			
+	748895195	None	Default			
+	782826392	Default	Default			
+	787604482	Slow	Default			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1440783398	MusicPlaybackSpeed			\Default Work Unit\MusicPlaybackSpeed	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	162188889	TutorialMaybe	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\D9\{D906810A-D8AE-09F9-4D63-A56372354D53}.wem		\Interactive Music Hierarchy\Default Work Unit\Demo Music\DemoMusic\TutorialMaybe		17146144
+	166384383	HardDrivers_OrbitCut_140	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\09\{09869567-E085-A47C-57C1-A2085DB0BB3E}.wem		\Interactive Music Hierarchy\Default Work Unit\Dune\HardDrivers_OrbitCut_140		30240100
+	285728181	PlayerDeath	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\49\{49BA74B9-F7A8-ABDF-A024-1A02C0AC5418}.wem		\Actor-Mixer Hierarchy\Default Work Unit\PlayerDeath		347384
 	396408356	TestClick	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\67\{671539EE-E6E1-95C3-3DC1-27B78A30D091}.wem		\Actor-Mixer Hierarchy\Default Work Unit\TestClick		40268
-	529303890	Test	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\D5\{D587EFBE-135F-5325-813B-99EAA66C922A}.wem		\Interactive Music Hierarchy\Default Work Unit\Rizu Stage\RizuStageStartLoop\Test		37908
+	529303890	New Music Track	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\D5\{D587EFBE-135F-5325-813B-99EAA66C922A}.wem		\Interactive Music Hierarchy\Default Work Unit\Demo Music\DemoMusic\New Music Track		37908
 	852330174	Music_Beta_Start_164	C:\p4\Personal\SD\Orbit\Wwise\Orbit\.cache\67\{674AC229-0C45-35C1-8817-EB15A4978F11}.wem		\Interactive Music Hierarchy\Default Work Unit\Rizu Stage\RizuStageStartLoop\Music_Beta_Start_164		9293368
 

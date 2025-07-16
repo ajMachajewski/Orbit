@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{4A912F3A-CED6-4D07-92CF-604DBF18C8B1}",
     "Language": "SFX",
-    "Hash": "{7B55A95E-3DC6-203D-5613-C44666DCD411}",
+    "Hash": "{A72011D1-0CE8-4AC8-D9F0-02117AEE39C4}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
     "ShortName": "Main",
     "Path": "Main.bnk",
@@ -22,6 +22,22 @@
       "Location": "Memory",
       "ShortName": "TutorialMaybe.wav",
       "CachePath": "D9/{D906810A-D8AE-09F9-4D63-A56372354D53}.wem"
+     },
+     {
+      "Id": "166384383",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HardDrivers_OrbitCut_140.wav",
+      "CachePath": "09/{09869567-E085-A47C-57C1-A2085DB0BB3E}.wem"
+     },
+     {
+      "Id": "285728181",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PlayerDeath.wav",
+      "CachePath": "49/{49BA74B9-F7A8-ABDF-A024-1A02C0AC5418}.wem"
      },
      {
       "Id": "396408356",
@@ -53,21 +69,55 @@
       "Id": "2121299920",
       "Name": "Play_DemoMusic",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_DemoMusic",
-      "GUID": "{A45F094D-34D6-469F-A73A-3C009B30B93F}",
+      "GUID": "{212BE8CB-A014-4073-9AEA-8680D3EB2773}",
       "DurationType": "OneShot",
       "DurationMin": "92.09303",
       "DurationMax": "92.09303",
       "MediaRefs": [
        {
         "Id": "162188889"
+       },
+       {
+        "Id": "529303890"
        }
       ]
      },
      {
-      "Id": "3649465061",
-      "Name": "Play_Rizu_Stage",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Rizu_Stage",
-      "GUID": "{46984F70-485A-490E-B6B9-2993278A07F0}",
+      "Id": "2560865840",
+      "Name": "Play_Dune",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Dune",
+      "GUID": "{58134184-5F4E-4986-ABDA-F5A5585A81AD}",
+      "DurationType": "OneShot",
+      "DurationMin": "174.85718",
+      "DurationMax": "174.85718",
+      "MediaRefs": [
+       {
+        "Id": "166384383"
+       },
+       {
+        "Id": "529303890"
+       }
+      ]
+     },
+     {
+      "Id": "910581297",
+      "Name": "Play_PlayerDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_PlayerDeath",
+      "GUID": "{0075E0EF-01A5-4360-9CE4-BBFA85755D2F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7040277",
+      "DurationMax": "2.1469402",
+      "MediaRefs": [
+       {
+        "Id": "285728181"
+       }
+      ]
+     },
+     {
+      "Id": "3429943800",
+      "Name": "Play_RizuStage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_RizuStage",
+      "GUID": "{64927A80-BC21-4C1D-A466-FCFC823DCCA5}",
       "DurationType": "OneShot",
       "DurationMin": "54.146362",
       "DurationMax": "54.146362",
@@ -93,10 +143,66 @@
         "Id": "396408356"
        }
       ]
+     },
+     {
+      "Id": "862296290",
+      "Name": "Slow_Music",
+      "ObjectPath": "\\Events\\Default Work Unit\\Slow_Music",
+      "GUID": "{4256D695-628E-4F85-96D2-B8E2A7CBD252}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "394383334",
+      "Name": "Stop_DemoMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_DemoMusic",
+      "GUID": "{D439566E-341A-454D-8794-5DCAFB1ADA4D}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2845582322",
+      "Name": "Stop_Dune",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_Dune",
+      "GUID": "{AC18A7DF-F52E-408A-A026-AB9AFEC39489}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "98427794",
+      "Name": "Stop_RizuStage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Stop_RizuStage",
+      "GUID": "{564A753C-5145-4524-9BDC-ADA96EC272B7}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionPostEvent": [
+       {
+        "Id": "862296290",
+        "Name": "Slow_Music",
+        "ObjectPath": "\\Events\\Default Work Unit\\Slow_Music",
+        "GUID": "{4256D695-628E-4F85-96D2-B8E2A7CBD252}"
+       }
+      ]
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1440783398",
+      "Name": "MusicPlaybackSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicPlaybackSpeed",
+      "GUID": "{4FC85F38-B26F-4946-A9A9-FC4FC726708B}"
      }
     ]
    }
   ],
-  "FileHash": "{0E566959-ED29-5ED1-F3D4-4F0B3A8D8616}"
+  "FileHash": "{CE38E765-58D0-71AD-405D-9D407DF66240}"
  }
 }

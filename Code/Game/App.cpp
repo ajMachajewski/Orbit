@@ -94,6 +94,31 @@ extern Clock* g_systemClock;
 }
 
 
+//----------------------------------------------------------------------------------------------------------
+bool App::Command_Delay( EventArgs& args )
+{
+	std::string inputDelayString = args.GetValue( "set", "" );
+	if ( inputDelayString != "" )
+	{
+		float inputDelayAsFloat = -1.0;
+		sscanf_s( inputDelayString.c_str(), "%f", &inputDelayAsFloat );
+		if ( inputDelayAsFloat >= 0.f )
+		{
+			g_gameConfigBlackboard.SetValue( "inputDelaySeconds", inputDelayString );
+			double currentInputDelay = g_gameConfigBlackboard.GetValue( "inputDelaySeconds", 0.0 );
+			std::string message = Stringf( "Set the input delay is %1.3f seconds.", currentInputDelay );
+			g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, message );
+			return true;
+		}
+	}
+
+	double currentInputDelay = g_gameConfigBlackboard.GetValue( "inputDelaySeconds", 0.0 );
+	std::string message = Stringf( "The current input delay is %1.3f seconds.", currentInputDelay );
+	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, message );
+	return true;
+}
+
+
 //--------------------------------------------------------------------------------------------------------------
 App::App()
 {
@@ -173,6 +198,10 @@ void App::Startup()
 	g_theEventSystem->GetEventMetadata( "nofail" ).m_longDescription = "No-Fail will move the player to the next tile if you miss an input, rather than killing the player.";
 	g_theEventSystem->DefineAlias( "nf", "nofail" );
 
+	g_theEventSystem->SubscribeEventCallbackFunction( "delay", Command_Delay );
+	g_theEventSystem->GetEventMetadata( "delay" ).m_isCommmand = true;
+	g_theEventSystem->DefineAlias( "d", "delay" );
+
 	g_defaultFont = g_theRenderer->CreateOrGetBitmapFont( "Data/Images/RobotoMonoSemiBold128" );
 
 	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "App Startup" );
@@ -183,7 +212,7 @@ void App::Startup()
 	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "\nAutoplay and NoFail modes are available via commands." );
 	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "Type \"h\" or \"help\" for information." );
 	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "\nGreen tiles swap the direction of rotation." );
-	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "Magenta tiles indicate a speed up, cyan indicates a slow down." );
+	g_theDevConsole->AddLine( DevConsole::INFO_MAJOR, "Orange tiles indicate a speed up, blue indicates a slow down." );
 
 	// Initialize Game & Game Constants
 	LoadGameConfig( "Data/GameConfig.xml" );

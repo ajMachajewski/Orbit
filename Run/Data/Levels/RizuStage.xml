@@ -1,0 +1,15 @@
+<Level 
+	name="Rizu: Stage! Main Theme"
+	source="Rizu: Stage!"
+	path="Data/Paths/RizuStage.xml"
+	musicPlayEvent="Play_RizuStage"
+	musicStopEvent="Stop_RizuStage"
+	bpm="164"
+	countdownLength="4"
+	difficulty="3"
+>
+	<Background
+		background="Data/Images/SpaceBlue.png"
+		backgroundScale="1"
+	/>
+</Level>

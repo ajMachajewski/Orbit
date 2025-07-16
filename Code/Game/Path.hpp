@@ -30,16 +30,17 @@ public:
 
 private:
 	VertexBuffer* m_vbo = nullptr;
-	int m_vertCount = 0;
 	Vec2 m_position = Vec2::ZERO;
+	int m_vertCount = 0;
 
 public:
-	bool m_clockwise = true;
+	float m_durationInBeats = 1.f;
 	double m_timeInBeats = 0.f;
 	float m_speed = 1.0;
-	float m_durationInBeats = 1.f;
 	float m_angle = 180.f;
 	float m_radius = 5.f;
+	bool m_clockwise = true;
+	bool m_checkpoint = false;
 };
 
 
@@ -59,6 +60,8 @@ public:
 
 	PathNode const* GetNode( int index ) const;
 	PathNode const* GetLastNode() const;
+	unsigned int GetNodeCount() const;
+	float GetWidth() const;
 
 private:
 	Conductor const& m_conductor;

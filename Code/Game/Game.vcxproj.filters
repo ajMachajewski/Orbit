@@ -17,6 +17,9 @@
     <Filter Include="UI">
       <UniqueIdentifier>{1887c4f3-bb85-4561-9087-b7361e67ee36}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data\Levels">
+      <UniqueIdentifier>{03d521a9-5dbb-4adf-821e-eaf59b5f6d53}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main_Windows.cpp">
@@ -54,6 +57,15 @@
     </ClCompile>
     <ClCompile Include="Menu.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="Prop.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelMetrics.cpp">
+      <Filter>Gameplay</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +105,21 @@
     <ClInclude Include="Menu.hpp">
       <Filter>UI</Filter>
     </ClInclude>
+    <ClInclude Include="Level.hpp">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Prop.hpp">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelMetrics.hpp">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\ReadMe.txt" />
+    <Text Include="..\..\Run\Data\Credits.txt">
+      <Filter>Data</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\Run\Data\GameConfig.xml">
@@ -106,6 +130,21 @@
     </Xml>
     <Xml Include="..\..\Run\Data\Paths\RizuStage.xml">
       <Filter>Data\Paths</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Levels\RizuStage.xml">
+      <Filter>Data\Levels</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Levels\TestLevel.xml">
+      <Filter>Data\Levels</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Levels\HardDriverzDune.xml">
+      <Filter>Data\Levels</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\Paths\HardDriverzDune.xml">
+      <Filter>Data\Paths</Filter>
+    </Xml>
+    <Xml Include="..\..\Run\Data\LevelConfig.xml">
+      <Filter>Data</Filter>
     </Xml>
   </ItemGroup>
 </Project>

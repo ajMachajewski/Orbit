@@ -121,7 +121,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)../Engine/Code/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)../Engine/Code/;$(SolutionDir)../Engine/Code/ThirdParty/Wwise/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -167,7 +167,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)../Engine/Code/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Code/;$(SolutionDir)../Engine/Code/;$(SolutionDir)../Engine/Code/ThirdParty/Wwise/</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -195,10 +195,13 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCamera.cpp" />
     <ClCompile Include="GameCommon.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelMetrics.cpp" />
     <ClCompile Include="Main_Windows.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Path.cpp" />
     <ClCompile Include="PlayerPlanets.cpp" />
+    <ClCompile Include="Prop.cpp" />
     <ClCompile Include="TapManager.cpp" />
     <ClCompile Include="TimingJudgement.cpp" />
   </ItemGroup>
@@ -210,17 +213,26 @@
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameCamera.hpp" />
     <ClInclude Include="GameCommon.hpp" />
+    <ClInclude Include="Level.hpp" />
+    <ClInclude Include="LevelMetrics.hpp" />
     <ClInclude Include="Menu.hpp" />
     <ClInclude Include="Path.hpp" />
     <ClInclude Include="PlayerPlanets.hpp" />
+    <ClInclude Include="Prop.hpp" />
     <ClInclude Include="TapManager.hpp" />
     <ClInclude Include="TimingJudgement.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\ReadMe.txt" />
+    <Text Include="..\..\Run\Data\Credits.txt" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="..\..\Run\Data\GameConfig.xml" />
+    <Xml Include="..\..\Run\Data\LevelConfig.xml" />
+    <Xml Include="..\..\Run\Data\Levels\HardDriverzDune.xml" />
+    <Xml Include="..\..\Run\Data\Levels\RizuStage.xml" />
+    <Xml Include="..\..\Run\Data\Levels\TestLevel.xml" />
+    <Xml Include="..\..\Run\Data\Paths\HardDriverzDune.xml" />
     <Xml Include="..\..\Run\Data\Paths\RizuStage.xml" />
     <Xml Include="..\..\Run\Data\Paths\TestPath1.xml" />
   </ItemGroup>

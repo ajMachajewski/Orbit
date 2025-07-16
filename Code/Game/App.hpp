@@ -16,6 +16,7 @@ public:
 	static bool RecieveWM_CLOSE( EventArgs& args );
 	static bool Command_Autoplay( EventArgs& args );
 	static bool Command_Nofail( EventArgs& args );
+	static bool Command_Delay( EventArgs& args );
 
 public:
 	App();

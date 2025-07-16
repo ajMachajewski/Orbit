@@ -2,6 +2,7 @@
 #include "Game/GameCommon.hpp"
 #include "Game/Conductor.hpp"
 #include "Game/TapManager.hpp"
+#include "Game/Path.hpp"
 #include "Engine/Core/EngineCommon.hpp"
 #include "Engine/Core/Clock.hpp"
 #include "Engine/Math/FloatRange.hpp"
@@ -11,27 +12,13 @@
 
 
 //----------------------------------------------------------------------------------------------------------
-PlayerPlanets::PlayerPlanets( Path const& path, Conductor const& conductor, PlanetSettings const& planetSettings )
-	: m_path( path )
+PlayerPlanets::PlayerPlanets( Level& level, Conductor const& conductor, PlanetSettings const& planetSettings, int startingIndex )
+	: m_level( level )
+	, m_path( *level.GetPath() )
 	, m_settings( planetSettings )
 	, m_conductor( conductor )
+	, m_currentNodeIndex( startingIndex - 1 )
 {
-	m_input = new TapManager();
-	m_input->IgnoreKey( KEYCODE_ESC );
-	m_input->IgnoreKey( KEYCODE_TILDE );
-	m_input->IgnoreKey( KEYCODE_F1 );
-	m_input->IgnoreKey( KEYCODE_F2 );
-	m_input->IgnoreKey( KEYCODE_F3 );
-	m_input->IgnoreKey( KEYCODE_F4 );
-	m_input->IgnoreKey( KEYCODE_F5 );
-	m_input->IgnoreKey( KEYCODE_F6 );
-	m_input->IgnoreKey( KEYCODE_F7 );
-	m_input->IgnoreKey( KEYCODE_F8 );
-	m_input->IgnoreKey( KEYCODE_F9 );
-	m_input->IgnoreKey( KEYCODE_F10 );
-	m_input->IgnoreKey( KEYCODE_F11 );
-	m_input->IgnoreKey( KEYCODE_F12 );
-
 	GoToNextNode();
 }
 
@@ -39,8 +26,7 @@ PlayerPlanets::PlayerPlanets( Path const& path, Conductor const& conductor, Plan
 //----------------------------------------------------------------------------------------------------------
 PlayerPlanets::~PlayerPlanets()
 {
-	delete m_input;
-	m_input = nullptr;
+
 }
 
 
@@ -74,6 +60,9 @@ void PlayerPlanets::Update()
 	m_angle = 180.f + inAngle + angleDispFromPrevAngle;
 	m_angle = GetNormalizedAngle( m_angle );
 
+	if ( !m_level.IsPlaying() )
+		return;
+
 	bool autoplay = g_gameConfigBlackboard.GetValue( "autoplay", false );
 	if ( autoplay && m_active )
 	{
@@ -81,37 +70,40 @@ void PlayerPlanets::Update()
 		double deltaTimeToTarget = targetTime - timeInBeats;
 		if ( deltaTimeToTarget < 0.0 )
 		{
-			m_input->PushTap();
+			m_level.GetTapManager().PushTap();
 		}
 	}
-
-	m_input->PollInput();
 
 	if ( nextNode == nullptr )
 		return;
 
 	double targetTime = nextNode->m_timeInBeats;
 	double currentTime = m_conductor.GetCurrentTimeInBeats();
-	float beatDurationSeconds = m_conductor.GetBeatDuration();
-	targetTime *= beatDurationSeconds;
-	currentTime *= beatDurationSeconds;
+	currentTime = m_conductor.GetCurrentTimeInBeats();
 
-	TimingJudgement judgement = GetTimingJudgment( targetTime, currentTime );
-	if ( judgement == TimingJudgement::MISS )
+	float beatDurationSeconds = m_conductor.GetBeatDuration();
+	double targetTimeSeconds = targetTime * beatDurationSeconds;
+	double currentTimeSeconds = currentTime * beatDurationSeconds;
+
+	if ( beatDurationSeconds < 0.f )
+ 		return;
+
+	TimingJudgement judgement = GetTimingJudgment( targetTimeSeconds, currentTimeSeconds );
+	bool nofail = g_gameConfigBlackboard.GetValue( "nofail", false );
+	if ( nofail && ( judgement == TimingJudgement::DEATH || judgement == TimingJudgement::TOO_LATE ) )
 	{
-		DebugAddMessage( "Miss!", 2.f, Rgba8::DARK_RED, Rgba8::PASTEL_CYAN );
-		bool nofail = g_gameConfigBlackboard.GetValue( "nofail", false );
-		if ( nofail )
-		{
-			GoToNextNode();
-		}
-		else
-		{
-			Die();
-		}
+		m_level.ReportTimingJudgement( GetOrbitingPlanetPosition(), judgement );
+		GoToNextNode();
+		return;
 	}
 
-	while ( m_input->PopIfTap() >= 0.0 )
+	if ( judgement == TimingJudgement::DEATH )
+	{
+		Die();
+		return;
+	}
+
+	while ( m_level.GetTapManager().PopIfTap() )
 	{
 		HandleTap( judgement );
 
@@ -120,8 +112,8 @@ void PlayerPlanets::Update()
 			break;
 
 		targetTime = nextNode->m_timeInBeats;
-		targetTime *= beatDurationSeconds;
-		judgement = GetTimingJudgment( targetTime, currentTime );
+		targetTimeSeconds = targetTime * beatDurationSeconds;
+		judgement = GetTimingJudgment( targetTimeSeconds, currentTimeSeconds );
 	}
 }
 
@@ -163,19 +155,22 @@ void PlayerPlanets::Render() const
 
 
 //----------------------------------------------------------------------------------------------------------
+void PlayerPlanets::Enable()
+{
+	m_active = true;
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+void PlayerPlanets::Disable()
+{
+	m_active = false;
+}
+
+
+//----------------------------------------------------------------------------------------------------------
 void PlayerPlanets::HandleTap( TimingJudgement judgement )
 {
-	if ( judgement == TimingJudgement::MISS )
-	{
-		ERROR_RECOVERABLE( "Miss judgment on a tap! This shouldn't happen?" );
-	}
-
-
-	DebugAddMessage(
-		Stringf( "%s", TimingJudgementToString( judgement ) ),
-		1.f, TimingJudgementToColor( judgement ), Rgba8::PASTEL_CYAN
-	);
-
 	if ( IsJudgementAcceptable( judgement ) )
 	{
 		GoToNextNode();
@@ -184,6 +179,8 @@ void PlayerPlanets::HandleTap( TimingJudgement judgement )
 		{
 			m_overloadCount = 0;
 		}
+
+		m_level.ReportTimingJudgement( GetPosition() + Vec2( 0.f, .6f ), judgement );
 	}
 	else
 	{
@@ -193,6 +190,8 @@ void PlayerPlanets::HandleTap( TimingJudgement judgement )
 		{
 			Overload();
 		}
+
+		m_level.ReportTimingJudgement( GetOrbitingPlanetPosition(), judgement );
 	}
 }
 
@@ -208,9 +207,8 @@ void PlayerPlanets::GoToNextNode()
 	m_clockwise = currentNode->m_clockwise;
 	m_position = currentNode->GetPosition();
 
-	g_theAudio->PlayEvent( AK::EVENTS::PLAY_TESTCLICK );
+	//g_theAudio->PlayEvent( AK::EVENTS::PLAY_TESTCLICK );
 
-	// #PICKUP here
 	m_angle += 180.f;
 	while ( m_angle <= 0.f )	m_angle += 360.f;
 	while ( m_angle > 360.f )	m_angle -= 360.f;	// Angle must be in a (0,360] range.
@@ -220,10 +218,23 @@ void PlayerPlanets::GoToNextNode()
 	{
 		// Reached final node, level clear!
 		m_active = false;
+		m_level.GoToState( LevelState::WIN );
 	}
 
 	m_currentPlanet++;
 	m_currentPlanet %= m_planetCount;
+
+	if ( currentNode->m_checkpoint )
+	{
+		m_level.ReportCheckpoint( m_currentNodeIndex - 1 );
+	}
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+unsigned int PlayerPlanets::GetNodeIndex() const
+{
+	return m_currentNodeIndex;
 }
 
 
@@ -249,6 +260,15 @@ Vec2 const& PlayerPlanets::GetPositionAhead( int nodeLookahead /*= 1 */ ) const
 
 
 //----------------------------------------------------------------------------------------------------------
+Vec2 PlayerPlanets::GetOrbitingPlanetPosition() const
+{
+	float travelRadius = GetCurrentNode()->m_radius * 2;
+	Vec2 toOtherPlanet = Vec2::MakeFromPolarDegrees( m_angle, travelRadius );
+	return m_position + toOtherPlanet;
+}
+
+
+//----------------------------------------------------------------------------------------------------------
 void PlayerPlanets::Overload()
 {
 	DebugAddMessage( "OVERLOAD!!!", 1.f, Rgba8::DARK_RED, Rgba8::CYAN );
@@ -259,6 +279,8 @@ void PlayerPlanets::Overload()
 //----------------------------------------------------------------------------------------------------------
 void PlayerPlanets::Die()
 {
+	g_theAudio->PlayEvent( AK::EVENTS::PLAY_PLAYERDEATH );
+	m_level.GoToState( LevelState::FAIL );
 	m_isDead = true;
 	m_active = false;
 }

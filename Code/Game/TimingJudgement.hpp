@@ -13,7 +13,8 @@ enum class TimingJudgement
 	PERFECT,
 	LPERFECT,
 	LATE,
-	MISS,
+	TOO_LATE,
+	DEATH,
 
 	COUNT
 };

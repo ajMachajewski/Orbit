@@ -62,9 +62,9 @@ void PathNode::InitializeVerts( Vec2 const& inNormal, Vec2 const& outNormal, flo
 		Vec2 innerCenterLeft = centerLeft - ( borderThickness * inTangent );
 		Vec2 innerCenterRight = centerRight + ( borderThickness * inTangent );
 
-		AddVertsForDisc2D( mesh, m_position, m_radius * .5f, borderColor );
+		AddVertsForDisc2D( mesh, m_position, halfWidth, borderColor );
 		AddVertsForQuad2D( mesh, inLeft, inRight, centerRight, centerLeft, borderColor );
-		AddVertsForDisc2D( mesh, m_position, m_radius * .5f - borderThickness, baseColor );
+		AddVertsForDisc2D( mesh, m_position, halfWidth - borderThickness, baseColor );
 		AddVertsForQuad2D( mesh, innerInLeft, innerInRight, innerCenterRight, innerCenterLeft, baseColor );
 	}
 	else
@@ -82,18 +82,23 @@ void PathNode::InitializeVerts( Vec2 const& inNormal, Vec2 const& outNormal, flo
 	float dotRadius	= .1f * width;
 	if ( speedChange > 0 )		// Fast
 	{
-		dotColor = Rgba8::MAGENTA;
+		dotColor = Rgba8( 255, 127, 0 );	// Orange
 		dotRadius = .25f * width;
 	}
 	else if ( speedChange < 0 )	// Slow
 	{
-		dotColor = Rgba8::CYAN;
+		dotColor = Rgba8( 0, 127, 255 );	// Dark cyan
 		dotRadius = .25f * width;
 	}
 	else if ( spin )
 	{
 		dotColor = Rgba8( 0, 255, 75, 255 );
 		dotRadius = .25f * width;
+	}
+	else if ( m_checkpoint )
+	{
+		dotColor = Rgba8::PASTEL_CYAN;
+		dotRadius = .3f * width;
 	}
 
  	AddVertsForDisc2D( mesh, m_position, dotRadius, dotColor, 16 );
@@ -122,7 +127,7 @@ void PathNode::DebugRender() const
 	transform.AppendZRotation( -90 );
 	transform.AppendYRotation( -90 );
 
-	//DebugAddWorldText( info, transform, m_radius * .5f, Vec2( 0.5, 0.5 ), 0.f, Rgba8::DARK_GREEN, Rgba8::DARK_GREEN );
+	DebugAddWorldText( info, transform, m_radius * .5f, Vec2( 0.5, 0.5 ), 0.f, Rgba8::DARK_GREEN, Rgba8::DARK_GREEN );
 }
 
 
@@ -263,6 +268,7 @@ void Path::AddNode( NamedStrings& arguments )
 	newNode.m_radius = .5f * m_scale;
 	newNode.m_clockwise = isClockwise;
 	newNode.m_speed = speed;
+	newNode.m_checkpoint = arguments.GetValue( "checkpoint", false );
 
 	Vec2 outDirection = Vec2::MakeFromPolarDegrees( angle );
 	int speedChange = 0;
@@ -292,4 +298,18 @@ PathNode const* Path::GetLastNode() const
 		return nullptr;
 
 	return &m_nodes[nodeCount - 1];
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+unsigned int Path::GetNodeCount() const
+{
+	return static_cast<unsigned int>( m_nodes.size() );
+}
+
+
+//----------------------------------------------------------------------------------------------------------
+float Path::GetWidth() const
+{
+	return m_pathWidth;
 }

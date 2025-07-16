@@ -6,12 +6,15 @@
 class TapManager
 {
 public:
+	TapManager();
+
 	void IgnoreKey( unsigned char keycode );
 
 	void PollInput();
+	void PopAllTaps();
 
 	void PushTap();
-	double PopIfTap();
+	bool PopIfTap();
 
 	void ToggleActive();
 	void SetActive( bool active );

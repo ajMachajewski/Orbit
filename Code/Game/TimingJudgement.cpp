@@ -11,9 +11,10 @@ TimingJudgement GetTimingJudgment( double targetSeconds, double actualSeconds )
 	const float perfectThreshold = g_gameConfigBlackboard.GetValue( "perfectThresholdSeconds", 0.05f );
 	const float nearPerfectThreshold = g_gameConfigBlackboard.GetValue( "nearPerfectThresholdSeconds", 0.25f );
 	const float acceptableThreshold = g_gameConfigBlackboard.GetValue( "acceptedThresholdSeconds", 0.40f );
+	const float deathThreshold = g_gameConfigBlackboard.GetValue( "deathThresholdSeconds", 0.40f );
 
-	float timeSinceTarget = static_cast<float>( actualSeconds - targetSeconds );
-	float timeOffset = fabsf( timeSinceTarget );
+	const float timeSinceTarget = static_cast<float>( actualSeconds - targetSeconds );
+	const float timeOffset = fabsf( timeSinceTarget );
 	if ( timeOffset <= perfectThreshold )
 	{
 		return TimingJudgement::PERFECT;
@@ -30,7 +31,12 @@ TimingJudgement GetTimingJudgment( double targetSeconds, double actualSeconds )
 		return isEarly ? TimingJudgement::EARLY : TimingJudgement::LATE;
 	}
 
-	return isEarly ? TimingJudgement::TOO_EARLY : TimingJudgement::MISS;
+	if ( !isEarly && timeOffset >= deathThreshold )
+	{
+		return TimingJudgement::DEATH;
+	}
+
+	return isEarly ? TimingJudgement::TOO_EARLY : TimingJudgement::TOO_LATE;
 }
 
 
@@ -45,7 +51,8 @@ bool IsJudgementAcceptable( TimingJudgement judgement )
 		case TimingJudgement::PERFECT:		return true;
 		case TimingJudgement::LPERFECT:		return true;
 		case TimingJudgement::LATE:			return true;
-		case TimingJudgement::MISS:			return false;
+		case TimingJudgement::TOO_LATE:		return false;
+		case TimingJudgement::DEATH:		return false;
 
 		default:
 		{
@@ -67,7 +74,8 @@ const char* TimingJudgementToString( TimingJudgement judgement )
 		case TimingJudgement::PERFECT:		return "Perfect!";
 		case TimingJudgement::LPERFECT:		return "L-Perfect";
 		case TimingJudgement::LATE:			return "Late";
-		case TimingJudgement::MISS:			return "Miss!";
+		case TimingJudgement::TOO_LATE:		return "Miss!";
+		case TimingJudgement::DEATH:		return "";
 
 		default:							return "???";
 	}
@@ -85,7 +93,8 @@ Rgba8 TimingJudgementToColor( TimingJudgement judgement )
 		case TimingJudgement::PERFECT:		return Rgba8( 0, 255, 50, 255 );	// Green
 		case TimingJudgement::LPERFECT:		return Rgba8( 200, 200, 0, 255 );	// Yellow
 		case TimingJudgement::LATE:			return Rgba8( 255, 50, 0, 255 );	// Bright Red
-		case TimingJudgement::MISS:			return Rgba8( 175, 0, 0, 255 );		// Dark Red
+		case TimingJudgement::TOO_LATE:		return Rgba8( 175, 0, 0, 255 );		// Dark Red
+		case TimingJudgement::DEATH:		return Rgba8( 0, 0, 0, 0 );
 
 		default:							return Rgba8::BLACK;
 	}

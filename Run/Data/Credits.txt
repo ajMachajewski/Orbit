@@ -1,0 +1,7 @@
+<wave=0.5;tint=127,255,255>ORBIT<!wave;tint=175,175,175>
+by Ayden Machajewski
+based on <italics;tint=200,180,127>A Dance of <tint=255,127,127>Fire <tint=200,180,127>and <tint=127,127,255st>Ice<!italics;tint=175,175,175>
+by 7th Beat Games
+
+Images:
+<italics>Ansimuz<!italics> (OpenGameArt.org)

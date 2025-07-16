@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{E8C73C05-9AC5-A17E-EA11-491BBCB2A45E}",
+    "Hash": "{01E37943-042C-0E95-F8AE-227570AC1E2C}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -41,9 +41,59 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1440783398",
+      "Name": "MusicPlaybackSpeed",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\MusicPlaybackSpeed",
+      "GUID": "{4FC85F38-B26F-4946-A9A9-FC4FC726708B}"
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "628919086",
+      "Name": "Slowing",
+      "ObjectPath": "\\States\\Default Work Unit\\Slowing",
+      "GUID": "{D6570E8E-7403-481D-8960-3B73FF5B160D}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Slowing\\None",
+        "GUID": "{4663651A-E7E4-4C1F-ADD5-7923BAB9DE87}"
+       }
+      ]
+     },
+     {
+      "Id": "782826392",
+      "Name": "Default",
+      "ObjectPath": "\\States\\Default Work Unit\\Default",
+      "GUID": "{E72CBEC0-2706-415D-8779-8B2D8F1E3949}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Default\\None",
+        "GUID": "{C3479B31-B9C2-42D1-8AE8-BA44AFA7819B}"
+       },
+       {
+        "Id": "782826392",
+        "Name": "Default",
+        "ObjectPath": "\\States\\Default Work Unit\\Default\\Default",
+        "GUID": "{E08F2C3A-8EF2-4C09-A4ED-608EEEB914DC}"
+       },
+       {
+        "Id": "787604482",
+        "Name": "Slow",
+        "ObjectPath": "\\States\\Default Work Unit\\Default\\Slow",
+        "GUID": "{9B877692-FF6D-4747-8882-36F4DFB9FC5F}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{52CF7543-6DFB-A9AD-01EA-26AB9C0E0AEE}"
+  "FileHash": "{524163D4-6991-A5D6-EBEB-7C7230A56275}"
  }
 }

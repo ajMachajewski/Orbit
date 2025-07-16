@@ -7,8 +7,7 @@
 void GameCamera::Update()
 {
 	AABB2 bounds = GetBoundingBox();
-	Vec2 actualPosition = bounds.GetCenter();
-	Vec2 displacement = m_targetPosition - actualPosition;
+	Vec2 displacement = m_targetPosition - Vec2::CopyVec3XY( m_position );
 	displacement.y *= m_yBias;
 	float distance = displacement.GetLength();
 	Vec2 directionToTarget = distance > 0.0001f ? displacement / distance : Vec2::ZERO;
@@ -20,8 +19,7 @@ void GameCamera::Update()
 
 	float deltaTime = static_cast<float>( GetGameClock()->GetDeltaSeconds() );
 	m_velocity += totalAcceleration * deltaTime;
-	actualPosition += m_velocity * deltaTime;
-	bounds.SetCenter( actualPosition );
+	m_position += m_velocity * deltaTime;
 	SetOrthoView( bounds, m_orthographicNear, m_orthographicFar );
 }
 
@@ -30,6 +28,6 @@ void GameCamera::Update()
 void GameCamera::Reset()
 {
 	m_velocity = Vec2::ZERO;
-	m_targetPosition = Vec2::ZERO;
+	m_position = Vec3( m_targetPosition, 0.f );
 }
 

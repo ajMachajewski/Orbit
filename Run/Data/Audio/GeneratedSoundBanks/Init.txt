@@ -1,3 +1,13 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	628919086	Slowing			\Default Work Unit\Slowing	
+	782826392	Default			\Default Work Unit\Default	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Slowing			
+	748895195	None	Default			
+	782826392	Default	Default			
+	787604482	Slow	Default			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 

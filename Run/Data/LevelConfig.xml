@@ -1,0 +1,7 @@
+<LevelConfig>
+	<Level xmlPath="Data/Levels/RizuStage.xml" />
+	<Level xmlPath="Data/Levels/HardDriverzDune.xml" />
+	<Level xmlPath="Data/Levels/TestLevel.xml" />
+</LevelConfig>
+
+
